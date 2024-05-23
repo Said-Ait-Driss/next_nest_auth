@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  _id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  username: String!
+  password: String!
+  status: String!
+  token: String!
+  refreshToken: String!
+  expiresIn: Float!
+}
+
+type SmUser {
+  _id: ID!
+  email: String!
+  username: String!
+}
+
+type Query {
+  allUsers: [User!]!
+  me: SmUser!
+  refresh: User!
+}
+
+type Mutation {
+  createUser(data: CreateUserDto!): User!
+  signin(data: SigninDto!): User!
+  signOut: User!
+}
+
+input CreateUserDto {
+  email: String!
+  password: String!
+  username: String!
+  firstName: String!
+  lastName: String!
+  status: String!
+}
+
+input SigninDto {
+  email: String!
+  password: String!
+}
